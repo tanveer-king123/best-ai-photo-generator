@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best AI Photo Generator - Official Website</title>
+<style>
+body{font-family: sans-serif; background:#f5f5f7; margin:0; padding:0; text-align:center}
+.header{background:#000; color:#fff; padding:20px; font-size:22px; font-weight:bold}
+.container{max-width:500px; margin:20px auto; background:#fff; padding:20px; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.1)}
+input{width:90%; padding:15px; border-radius:10px; border:1px solid #ccc; font-size:16px}
+button{background:#7c3aed; color:#fff; border:none; padding:15px 25px; border-radius:10px; font-size:18px; font-weight:bold; margin-top:15px; width:95%; cursor:pointer}
+button:hover{background:#000}
+.img-box{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:20px}
+.img-box img{width:100%; border-radius:10px; height:180px; object-fit:cover}
+.footer{margin-top:20px; color:#888; font-size:12px}
+#result{margin-top:20px; display:none}
+#result img{width:100%; border-radius:15px}
+</style>
+</head>
+<body>
+<div class="header">Best AI Photo Generator - Official ✨</div>
+<div class="container">
+<h2>AI Se Photo Banao - 1 Click Me</h2>
+<p>Jo chaho likho, AI apki photo bana dega</p>
+<input id="prompt" type="text" placeholder="Example: Mujhe Badshah Bana Do 👑">
+<button onclick="generate()">Generate Photo ✨</button>
+<div id="result">
+<h3>Your AI Photo Ready 👇</h3>
+<img id="aiImage" src="">
+<p>Photo ban gayi! Neeche download kar lo.</p>
+<button onclick="downloadImg()">Download HD Photo</button>
+</div>
+<div class="img-box">
+<img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500" alt="King">
+<img src="https://images.unsplash.com/photo-1614314107768-601506d1387e?w=500" alt="Astronaut">
+<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500" alt="CEO">
+<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500" alt="Model">
+</div>
+<div class="footer">Trusted by 1,000,000+ Users Worldwide | Official AI Generator 2025</div>
+</div>
+<script>
+function generate(){
+ let p=document.getElementById('prompt').value;
+ if(!p){alert('Pehle kuch likho jaise: Mujhe Badshah Bana Do'); return;}
+ document.getElementById('result').style.display='block';
+ let img = document.getElementById('aiImage');
+ img.src = `https://image.pollinations.ai/prompt/${encodeURIComponent(p)}?width=1024&height=1024&nologo=true`;
+ window.scrollTo(0,500);
+}
+function downloadImg(){
+ let src=document.getElementById('aiImage').src;
+ let a=document.createElement('a'); a.href=src; a.download='ai-photo.jpg'; a.click();
+}
+</script>
+</body>
+</html>
